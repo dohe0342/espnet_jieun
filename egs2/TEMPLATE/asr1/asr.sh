@@ -1552,6 +1552,7 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
         log "Decoding started... log: '${_logdir}/asr_inference.*.log'"
         rm -f "${_logdir}/*.log"
         # shellcheck disable=SC2046,SC2086
+		echo ${asr_task}_inference${inference_bin_tag}
         ${_cmd} --gpu "${_ngpu}" JOB=1:"${_nj}" "${_logdir}"/asr_inference.JOB.log \
             ${python} -m espnet2.bin.${asr_task}_inference${inference_bin_tag} \
                 --batch_size ${batch_size} \
