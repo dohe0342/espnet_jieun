@@ -122,6 +122,7 @@ class GPT2LM(AbsLM):
         n_batch = len(ys_new)
         h = self.lm(ys_new)
         print(h.keys())
+        return
         """Score new token batch.
 
         Args:
