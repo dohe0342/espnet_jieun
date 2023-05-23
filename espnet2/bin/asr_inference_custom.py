@@ -625,7 +625,9 @@ def inference(
         device = "cuda"
     else:
         device = "cpu"
-
+    
+    print(lm_file)
+    exit()
     # 1. Set random-seed
     set_all_random_seed(seed)
 
