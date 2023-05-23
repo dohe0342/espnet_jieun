@@ -1,3 +1,5 @@
+import sys
+sys.path.append('/workspace/jieun/language-modeling')
 import argparse
 import logging
 from typing import Callable, Collection, Dict, List, Optional, Tuple
@@ -21,6 +23,8 @@ from espnet2.utils.get_default_kwargs import get_default_kwargs
 from espnet2.utils.nested_dict_action import NestedDictAction
 from espnet2.utils.types import str2bool, str_or_none
 
+from transformers import GPT2LMHeadModel, GPT2TokenizerFast, AutoTokenizer, AutoModelForCausalLM
+s
 lm_choices = ClassChoices(
     "lm",
     classes=dict(
