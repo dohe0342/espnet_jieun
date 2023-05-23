@@ -173,6 +173,7 @@ class Speech2Text:
             scorers["lm"] = lm.lm
 
         if 'gpt2' in lm_file:
+            print('herer!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             lm = LMTask.build_gpt2_from_file(
                     lm_file, device
             )
