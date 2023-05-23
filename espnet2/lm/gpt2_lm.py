@@ -9,7 +9,7 @@ from espnet.nets.pytorch_backend.transformer.encoder import Encoder
 from espnet.nets.pytorch_backend.transformer.mask import subsequent_mask
 
 
-class TransformerLM(AbsLM):
+class GPT2LM(AbsLM):
     def __init__(
         self,
         vocab_size: int,
