@@ -113,6 +113,12 @@ class GPT2LM(AbsLM):
         print(ys)
         print('-'*20)
         exit()
+        ys_new = ys.copy()
+        for b in ys_new:
+            for tensor in b:
+                tensor = self.int_am2lm_dict[tensor]
+        
+        print(ys_new)
         return 
         """Score new token batch.
 
