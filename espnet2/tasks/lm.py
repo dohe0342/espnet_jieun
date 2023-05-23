@@ -222,36 +222,3 @@ class LMTask(AbsTask):
         
         model = GPT2LM(lm, tokenizer, device)
         return model
-        '''
-        assert check_argument_types()
-        if isinstance(args.token_list, str):
-            with open(args.token_list, encoding="utf-8") as f:
-                token_list = [line.rstrip() for line in f]
-
-            # "args" is saved as it is in a yaml file by BaseTask.main().
-            # Overwriting token_list to keep it as "portable".
-            args.token_list = token_list.copy()
-        elif isinstance(args.token_list, (tuple, list)):
-            token_list = args.token_list.copy()
-        else:
-            raise RuntimeError("token_list must be str or dict")
-
-        vocab_size = len(token_list)
-        logging.info(f"Vocabulary size: {vocab_size }")
-
-        # 1. Build LM model
-        lm_class = lm_choices.get_class(args.lm)
-        lm = lm_class(vocab_size=vocab_size, **args.lm_conf)
-
-        # 2. Build ESPnetModel
-        # Assume the last-id is sos_and_eos
-        model = ESPnetLanguageModel(lm=lm, vocab_size=vocab_size, **args.model_conf)
-
-        # FIXME(kamo): Should be done in model?
-        # 3. Initialize
-        if args.init is not None:
-            initialize(model, args.init)
-
-        assert check_return_type(model)
-        return model
-        '''
