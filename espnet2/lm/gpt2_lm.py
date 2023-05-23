@@ -26,30 +26,6 @@ class GPT2LM(AbsLM):
         super().__init__()
         self.lm = lm
         self.tokenizer = tokenizer
-        '''
-        if pos_enc == "sinusoidal":
-            pos_enc_class = PositionalEncoding
-        elif pos_enc is None:
-
-            def pos_enc_class(*args, **kwargs):
-                return nn.Sequential()  # indentity
-
-        else:
-            raise ValueError(f"unknown pos-enc option: {pos_enc}")
-
-        self.embed = nn.Embedding(vocab_size, embed_unit)
-        self.encoder = Encoder(
-            idim=embed_unit,
-            attention_dim=att_unit,
-            attention_heads=head,
-            linear_units=unit,
-            num_blocks=layer,
-            dropout_rate=dropout_rate,
-            input_layer="linear",
-            pos_enc_class=pos_enc_class,
-        )
-        self.decoder = nn.Linear(att_unit, vocab_size)
-        '''
 
     def _target_mask(self, ys_in_pad):
         ys_mask = ys_in_pad != 0
