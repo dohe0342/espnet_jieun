@@ -161,9 +161,6 @@ class GPT2LM(AbsLM):
         h = torch.matmul(h, self.convert_matrix)
         logp = self.log_softmax(h)
 
-        #print(len(states))
-        #print(len(states[0]))
-
         # transpose state of [layer, batch] into [batch, layer]
         #state_list = [[states[i][b] for i in range(n_layers)] for b in range(n_batch)]
         state_list = None
