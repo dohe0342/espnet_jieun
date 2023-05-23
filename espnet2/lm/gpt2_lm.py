@@ -147,8 +147,7 @@ class GPT2LM(AbsLM):
     ) -> Tuple[torch.Tensor, List[Any]]:
         
         print('-'*20)
-        print(ys)
-        print('-'*20)
+        print(ys.size())
         ys_new = []
         for i, b in enumerate(ys):
             ys_new.append([])
@@ -165,6 +164,7 @@ class GPT2LM(AbsLM):
         print('2', self.convert_matrix.size())
         h = torch.matmul(h, self.convert_matrix)
         print('3', h.size())
+        print('-'*20)
         logp = self.log_softmax(h)
 
         #print(len(states))
