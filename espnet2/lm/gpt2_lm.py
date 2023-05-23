@@ -62,6 +62,10 @@ class GPT2LM(AbsLM):
                 and next state for ys
 
         """
+        print('-'*20)
+        print(y)
+        print('-'*20)
+        exit()
         y = y.unsqueeze(0)
         h, _, cache = self.encoder.forward_one_step(
             self.embed(y), self._target_mask(y), cache=state
