@@ -32,6 +32,7 @@ lm_choices = ClassChoices(
     classes=dict(
         seq_rnn=SequentialRNNLM,
         transformer=TransformerLM,
+        gpt2=GPT2LM,
     ),
     type_check=AbsLM,
     default="seq_rnn",
