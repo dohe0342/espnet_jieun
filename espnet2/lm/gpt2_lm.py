@@ -167,6 +167,9 @@ class GPT2LM(AbsLM):
         print('3', h.size())
         logp = self.log_softmax(h)
 
+        print(len(states))
+        print(len(states[0]))
+
         # transpose state of [layer, batch] into [batch, layer]
         state_list = [[states[i][b] for i in range(n_layers)] for b in range(n_batch)]
         return logp, state_list
