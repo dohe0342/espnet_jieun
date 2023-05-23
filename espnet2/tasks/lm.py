@@ -220,7 +220,7 @@ class LMTask(AbsTask):
         model_max_length = 2048
         tokenizer = CharacterTokenizer(chars, model_max_length)
         
-        model = GPT2LM(lm, tokenizer)
+        model = GPT2LM(lm, tokenizer, device)
         return model
         '''
         assert check_argument_types()
