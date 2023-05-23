@@ -121,10 +121,13 @@ class GPT2LM(AbsLM):
         ys_new = torch.LongTensor(ys_new).to(ys.device)
         n_batch = len(ys_new)
         h = self.lm(ys_new)
-        print('*'*20)
-        print(len(h['past_key_values']))
-        print('*'*20)
-        return
+        h, states = h['logits'], h['past_key_values']
+        logp = self.log_softmax(h)
+
+        # transpose state of [layer, batch] into [batch, layer]
+        state_list = [[states[i][b] for i in range(n_layers)] for b in range(n_batch)]
+        return logp, state_list
+
         """Score new token batch.
 
         Args:
