@@ -113,10 +113,10 @@ class GPT2LM(AbsLM):
         print(ys)
         print('-'*20)
         ys_new = []
-        for b in ys:
+        for i, b in enumerate(ys):
             ys_new.append([])
             for tensor in b:
-                ys_new.append(self.int_am2lm_dict[tensor.item()])
+                ys_new[i].append(self.int_am2lm_dict[tensor.item()])
         
         ys_new = torch.LongTensor(ys_new).to(ys.device)
         print(ys_new)
