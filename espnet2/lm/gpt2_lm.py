@@ -114,6 +114,7 @@ class GPT2LM(AbsLM):
         print('-'*20)
         ys_new = []
         for b in ys:
+            ys_new.append([])
             for tensor in b:
                 ys_new.append(self.int_am2lm_dict[tensor.item()])
         
