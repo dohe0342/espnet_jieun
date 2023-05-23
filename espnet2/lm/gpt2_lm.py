@@ -26,6 +26,7 @@ class GPT2LM(AbsLM):
     ):
         super().__init__()
         self.device = device
+        self.lm = lm
         self.tokenizer = tokenizer
         self.log_softmax = torch.nn.LogSoftmax(dim=-1)
 
