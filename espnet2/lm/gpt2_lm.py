@@ -62,7 +62,7 @@ class GPT2LM(AbsLM):
                              30:95,
                          }
         
-        self.convert_matrix = torch.zeros(96, 31)
+        self.convert_matrix = torch.zeros(31, 96)
 
 
     def _target_mask(self, ys_in_pad):
