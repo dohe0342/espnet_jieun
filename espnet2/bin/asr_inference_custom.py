@@ -140,8 +140,6 @@ class Speech2Text:
             )
         asr_model.to(dtype=getattr(torch, dtype)).eval()
 
-        logging.info('asr model: ', asr_model)
-
         if quantize_asr_model:
             logging.info("Use quantized asr model for decoding.")
 
