@@ -24,7 +24,8 @@ from espnet2.utils.nested_dict_action import NestedDictAction
 from espnet2.utils.types import str2bool, str_or_none
 
 from transformers import GPT2LMHeadModel, GPT2TokenizerFast, AutoTokenizer, AutoModelForCausalLM
-s
+from charactertokenizer import CharacterTokenizer
+
 lm_choices = ClassChoices(
     "lm",
     classes=dict(
