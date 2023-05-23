@@ -214,7 +214,7 @@ class LMTask(AbsTask):
         return model
 
     @classmethod
-    def build_gpt2_from_file(lm_file, device) -> ESPnetLanguageModel:
+    def build_gpt2_from_file(self, lm_file, device) -> ESPnetLanguageModel:
         lm = GPT2LMHeadModel.from_pretrained(lm_file).to(device)
         chars = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ "
         model_max_length = 2048
