@@ -177,7 +177,7 @@ class Speech2Text:
                     lm_file, device
             )
 
-            scorers["lm"] = lm.lm
+            scorers["lm"] = lm
 
         # 3. Build ngram model
         if ngram_file is not None:
