@@ -1487,7 +1487,7 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
     log "Generate '${asr_exp}/${inference_tag}/run.sh'. You can resume the process from stage 12 using this script"
     mkdir -p "${asr_exp}/${inference_tag}"; echo "${run_args} --stage 12 \"\$@\"; exit \$?" > "${asr_exp}/${inference_tag}/run.sh"; chmod +x "${asr_exp}/${inference_tag}/run.sh"
 
-    inference_bin_tag=""
+    inference_bin_tag="custom"
     if [ ${asr_task} == "asr" ]; then
         if "${use_k2}"; then
             # Now only _nj=1 is verified if using k2
