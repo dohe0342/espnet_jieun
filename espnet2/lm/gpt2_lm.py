@@ -112,7 +112,6 @@ class GPT2LM(AbsLM):
         print('-'*20)
         print(ys)
         print('-'*20)
-        exit()
         ys_new = []
         for b in y:
             for tensor in b:
