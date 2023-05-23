@@ -24,6 +24,9 @@ class GPT2LM(AbsLM):
         #dropout_rate: float = 0.5,
     ):
         super().__init__()
+        self.lm = lm
+        self.tokenizer = tokenizer
+        '''
         if pos_enc == "sinusoidal":
             pos_enc_class = PositionalEncoding
         elif pos_enc is None:
@@ -46,6 +49,7 @@ class GPT2LM(AbsLM):
             pos_enc_class=pos_enc_class,
         )
         self.decoder = nn.Linear(att_unit, vocab_size)
+        '''
 
     def _target_mask(self, ys_in_pad):
         ys_mask = ys_in_pad != 0
