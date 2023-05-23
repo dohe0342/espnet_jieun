@@ -112,7 +112,7 @@ class GPT2LM(AbsLM):
         print('-'*20)
         print(ys)
         print('-'*20)
-        ys_new = torch.zeros(y.size())
+        ys_new = []
         for i, b in enumerate(ys):
             ys_new.append([])
             for tensor in b:
