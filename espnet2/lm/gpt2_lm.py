@@ -161,10 +161,10 @@ class GPT2LM(AbsLM):
         h = self.lm(ys_new)
         h, states = h['logits'], h['past_key_values']
         h = h[:,-1]
-        print(h.size())
-        print(self.convert_matrix.size())
+        print('1', h.size())
+        print('2', self.convert_matrix.size())
         h = torch.matmul(h, self.convert_matrix)
-        print(h.size())
+        print('3', h.size())
         logp = self.log_softmax(h)
 
         # transpose state of [layer, batch] into [batch, layer]
