@@ -972,6 +972,8 @@ def main(cmd=None):
     args = parser.parse_args(cmd)
     kwargs = vars(args)
     kwargs.pop("config", None)
+
+    print(args)
     inference(**kwargs)
 
 
