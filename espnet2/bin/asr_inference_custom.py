@@ -172,6 +172,13 @@ class Speech2Text:
 
             scorers["lm"] = lm.lm
 
+        if 'gpt2' in lm_file:
+            lm = LMTask.build_gpt2_from_file(
+                    lm_file, device
+            )
+
+            scorers["lm"] = lm.lm
+
         # 3. Build ngram model
         if ngram_file is not None:
             if ngram_scorer == "full":
