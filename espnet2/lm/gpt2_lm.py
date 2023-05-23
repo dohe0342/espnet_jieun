@@ -147,7 +147,7 @@ class GPT2LM(AbsLM):
     ) -> Tuple[torch.Tensor, List[Any]]:
         
         print('-'*20)
-        print(ys)
+        print(ys.size())
         print('-'*20)
         ys_new = []
         for i, b in enumerate(ys):
