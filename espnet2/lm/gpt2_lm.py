@@ -76,7 +76,7 @@ class GPT2LM(AbsLM):
     ) -> Tuple[torch.Tensor, List[Any]]:
         
         print('-'*20)
-        print(y)
+        print(ys)
         print('-'*20)
         exit()
         """Score new token batch.
