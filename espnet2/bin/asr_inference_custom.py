@@ -974,6 +974,7 @@ def main(cmd=None):
     kwargs.pop("config", None)
 
     print(args)
+
     inference(**kwargs)
 
 
