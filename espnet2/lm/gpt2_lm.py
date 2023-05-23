@@ -12,14 +12,16 @@ from espnet.nets.pytorch_backend.transformer.mask import subsequent_mask
 class GPT2LM(AbsLM):
     def __init__(
         self,
-        vocab_size: int,
-        pos_enc: str = None,
-        embed_unit: int = 128,
-        att_unit: int = 256,
-        head: int = 2,
-        unit: int = 1024,
-        layer: int = 4,
-        dropout_rate: float = 0.5,
+        lm,
+        tokenizer,
+        #vocab_size: int,
+        #pos_enc: str = None,
+        #embed_unit: int = 128,
+        #att_unit: int = 256,
+        #head: int = 2,
+        #unit: int = 1024,
+        #layer: int = 4,
+        #dropout_rate: float = 0.5,
     ):
         super().__init__()
         if pos_enc == "sinusoidal":
