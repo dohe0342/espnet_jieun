@@ -25,6 +25,7 @@ class GPT2LM(AbsLM):
         #dropout_rate: float = 0.5,
     ):
         super().__init__()
+        self.device = device
         self.lm = lm
         self.tokenizer = tokenizer
         self.log_softmax = torch.nn.LogSoftmax(dim=-1)
