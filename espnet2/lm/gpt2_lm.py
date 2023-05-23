@@ -26,7 +26,6 @@ class GPT2LM(AbsLM):
     ):
         super().__init__()
         self.device = device
-        self.lm = lm
         self.tokenizer = tokenizer
         self.log_softmax = torch.nn.LogSoftmax(dim=-1)
 
@@ -64,7 +63,7 @@ class GPT2LM(AbsLM):
                              30:95,
                          }
         
-        self.convert_matrix = torch.zeros(96, 31)
+        self.convert_matrix = torch.zeros(96, 31).to(device)
         self.convert_matrix[95][0] = 1
         self.convert_matrix[95][1] = 1
         self.convert_matrix[94][2] = 1
