@@ -170,6 +170,7 @@ class GPT2LM(AbsLM):
 
         # transpose state of [layer, batch] into [batch, layer]
         #state_list = [[states[i][b] for i in range(n_layers)] for b in range(n_batch)]
+        state_list = None
         return logp, state_list
 
         """Score new token batch.
