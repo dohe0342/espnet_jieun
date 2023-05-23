@@ -27,6 +27,7 @@ class GPT2LM(AbsLM):
         self.lm = lm
         self.tokenizer = tokenizer
         self.log_softmax = torch.nn.LogSoftmax(dim=-1)
+
         self.int_am2lm_dict = {
                              0:95,
                              1:95,
