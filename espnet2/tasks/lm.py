@@ -207,7 +207,8 @@ class LMTask(AbsTask):
         return model
 
     @classmethod
-    def build_gpt2_from_file(cls, args: argparse.Namespace) -> ESPnetLanguageModel:
+    def build_gpt2_from_file(lm_file, device) -> ESPnetLanguageModel:
+        '''
         assert check_argument_types()
         if isinstance(args.token_list, str):
             with open(args.token_list, encoding="utf-8") as f:
@@ -239,3 +240,4 @@ class LMTask(AbsTask):
 
         assert check_return_type(model)
         return model
+        '''
