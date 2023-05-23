@@ -159,6 +159,7 @@ class GPT2LM(AbsLM):
         n_layers = 12
         h = self.lm(ys_new)
         h, states = h['logits'], h['past_key_values']
+        h = h[:,-1]
         print(h.size())
         print(self.convert_matrix.size())
         h = torch.matmul(h, self.convert_matrix)
