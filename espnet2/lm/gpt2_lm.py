@@ -14,6 +14,7 @@ class GPT2LM(AbsLM):
         self,
         lm,
         tokenizer,
+        device,
         #vocab_size: int,
         #pos_enc: str = None,
         #embed_unit: int = 128,
@@ -160,7 +161,7 @@ class GPT2LM(AbsLM):
         h, states = h['logits'], h['past_key_values']
         print(h.size())
         print(self.convert_matrix.size())
-        h = h
+        h = torch.matmul(
         logp = self.log_softmax(h)
 
         # transpose state of [layer, batch] into [batch, layer]
