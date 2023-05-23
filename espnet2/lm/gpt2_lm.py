@@ -116,6 +116,7 @@ class GPT2LM(AbsLM):
         for i, b in enumerate(ys):
             ys_new.append([])
             for tensor in b:
+                print(ys_new)
                 ys_new[i].append(self.int_am2lm_dict[tensor.item()])
         
         ys_new = torch.LongTensor(ys_new).to(ys.device)
