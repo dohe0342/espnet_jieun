@@ -112,6 +112,7 @@ class GPT2LM(AbsLM):
         print('-'*20)
         print(ys)
         print('-'*20)
+        exit()
         return 
         """Score new token batch.
 
