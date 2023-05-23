@@ -147,7 +147,7 @@ class GPT2LM(AbsLM):
     ) -> Tuple[torch.Tensor, List[Any]]:
         
         print('-'*20)
-        print(ys.size())
+        print(ys)
         print('-'*20)
         ys_new = []
         for i, b in enumerate(ys):
@@ -161,6 +161,8 @@ class GPT2LM(AbsLM):
         h = self.lm(ys_new)
         h, states = h['logits'], h['past_key_values']
         h = h[:,-1]
+        h = torch.matmul(h, self.convert_matrix)
+        
         logp = self.log_softmax(h)
 
         #print(len(states))
@@ -168,7 +170,6 @@ class GPT2LM(AbsLM):
 
         # transpose state of [layer, batch] into [batch, layer]
         #state_list = [[states[i][b] for i in range(n_layers)] for b in range(n_batch)]
-        state_list = None
         return logp, state_list
 
         """Score new token batch.
