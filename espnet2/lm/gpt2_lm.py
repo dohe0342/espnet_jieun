@@ -117,10 +117,8 @@ class GPT2LM(AbsLM):
             ys_new.append([])
             for tensor in b:
                 ys_new[i].append(self.int_am2lm_dict[tensor.item()])
-                print(ys_new)
         
         ys_new = torch.LongTensor(ys_new).to(ys.device)
-        print(ys_new)
         return 
         """Score new token batch.
 
