@@ -214,6 +214,7 @@ class LMTask(AbsTask):
         tokenizer = CharacterTokenizer(chars, model_max_length)
         
         model = GPT2LM(lm, tokenizer)
+        return model
         '''
         assert check_argument_types()
         if isinstance(args.token_list, str):
