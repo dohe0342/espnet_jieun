@@ -208,6 +208,8 @@ class LMTask(AbsTask):
 
     @classmethod
     def build_gpt2_from_file(lm_file, device) -> ESPnetLanguageModel:
+        lm = GPT2LMHeadModel.from_pretrained(lm_file).to(device)
+        chars = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ "
         '''
         assert check_argument_types()
         if isinstance(args.token_list, str):
