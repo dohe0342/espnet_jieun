@@ -215,7 +215,6 @@ class LMTask(AbsTask):
 
     @classmethod
     def build_gpt2_from_file(self, lm_file, device) -> ESPnetLanguageModel:
-        device = 'cuda'
         lm = GPT2LMHeadModel.from_pretrained(lm_file).to(device)
         chars = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ "
         model_max_length = 2048
