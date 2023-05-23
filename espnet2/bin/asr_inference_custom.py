@@ -177,6 +177,7 @@ class Speech2Text:
             lm = LMTask.build_gpt2_from_file(
                     lm_file, device
             )
+            print(lm)
 
             scorers["lm"] = lm
 
