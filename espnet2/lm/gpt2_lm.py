@@ -121,7 +121,7 @@ class GPT2LM(AbsLM):
         ys_new = torch.LongTensor(ys_new).to(ys.device)
         n_batch = len(ys_new)
         h = self.lm(ys_new)
-        print(h['past_key_values'])
+        print(h['past_key_values'].size())
         return
         """Score new token batch.
 
