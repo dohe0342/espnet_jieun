@@ -96,7 +96,6 @@ class GPT2LM(AbsLM):
         self.convert_matrix[95][30] = 1
         print(self.convert_matrix)
 
-
     def _target_mask(self, ys_in_pad):
         ys_mask = ys_in_pad != 0
         m = subsequent_mask(ys_mask.size(-1), device=ys_mask.device).unsqueeze(0)
