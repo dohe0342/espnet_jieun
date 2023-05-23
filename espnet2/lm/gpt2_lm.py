@@ -158,6 +158,9 @@ class GPT2LM(AbsLM):
         n_layers = 12
         h = self.lm(ys_new)
         h, states = h['logits'], h['past_key_values']
+        print(h.size())
+        print(self.convert_matrix.size())
+        h = h
         logp = self.log_softmax(h)
 
         # transpose state of [layer, batch] into [batch, layer]
