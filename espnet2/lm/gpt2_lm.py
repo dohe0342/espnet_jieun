@@ -26,6 +26,40 @@ class GPT2LM(AbsLM):
         super().__init__()
         self.lm = lm
         self.tokenizer = tokenizer
+        self.int_am2lm_dict = {
+                             0:95,
+                             1:95,
+                             2:95,
+                             3:94,    #|
+                             4:36,    #E
+                             5:51,    #T
+                             6:32,    #A
+                             7:46,    #O
+                             8:45,    #N
+                             9:40,    #I
+                             10:39,   #H
+                             11:50,   #S
+                             12:49,   #R
+                             13:35,   #D
+                             14:43,   #L
+                             15:52,   #U
+                             16:44,   #M
+                             17:54,   #W
+                             18:34,   #C
+                             19:37,   #F
+                             20:38,   #G
+                             21:56,   #Y
+                             22:47,   #P
+                             23:33,   #B
+                             24:53,   #V
+                             25:42,   #K
+                             26:6,    #'
+                             27:55,   #X
+                             28:41,   #J
+                             29:48,   #Q
+                             30:57    #Z
+                         }
+
 
     def _target_mask(self, ys_in_pad):
         ys_mask = ys_in_pad != 0
@@ -78,7 +112,7 @@ class GPT2LM(AbsLM):
         print('-'*20)
         print(ys)
         print('-'*20)
-        exit()
+        return 
         """Score new token batch.
 
         Args:
@@ -94,6 +128,7 @@ class GPT2LM(AbsLM):
 
         """
         # merge states
+        '''
         n_batch = len(ys)
         n_layers = len(self.encoder.encoders)
         if states[0] is None:
@@ -115,3 +150,5 @@ class GPT2LM(AbsLM):
         # transpose state of [layer, batch] into [batch, layer]
         state_list = [[states[i][b] for i in range(n_layers)] for b in range(n_batch)]
         return logp, state_list
+        '''
+
