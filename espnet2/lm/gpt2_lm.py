@@ -120,6 +120,7 @@ class GPT2LM(AbsLM):
         
         ys_new = torch.LongTensor(ys_new).to(ys.device)
         n_batch = len(ys_new)
+        n_layers = 12
         h = self.lm(ys_new)
         h, states = h['logits'], h['past_key_values']
         logp = self.log_softmax(h)
