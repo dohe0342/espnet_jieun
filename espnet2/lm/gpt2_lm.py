@@ -94,6 +94,7 @@ class GPT2LM(AbsLM):
         self.convert_matrix[48][28] = 1
         self.convert_matrix[57][29] = 1
         self.convert_matrix[95][30] = 1
+        print(self.convert_matrix)
 
 
     def _target_mask(self, ys_in_pad):
