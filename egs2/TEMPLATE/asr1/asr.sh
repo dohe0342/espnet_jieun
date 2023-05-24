@@ -1562,7 +1562,7 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
 				--lm_file /DB/jieun/exp/finetuning/libri50per/230420_gpt2_char_libri50_train \
 				--lm_weight 0.3 \
 				--penalty -0.1 \
-				--beam_size 50
+				--beam_size 50 \
                 --data_path_and_name_and_type "${_data}/${_scp},speech,${_type}" \
                 --key_file "${_logdir}"/keys.JOB.scp \
                 --asr_train_config "${asr_exp}"/config.yaml \
