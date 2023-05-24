@@ -901,7 +901,7 @@ def get_parser():
         help="The batch size for inference",
     )
     group.add_argument("--nbest", type=int, default=1, help="Output N-best hypotheses")
-    group.add_argument("--beam_size", type=int, default=20, help="Beam size")
+    group.add_argument("--beam_size", type=int, default=50, help="Beam size")
     group.add_argument("--penalty", type=float, default=0.0, help="Insertion penalty")
     group.add_argument(
         "--maxlenratio",
