@@ -970,9 +970,10 @@ def main(cmd=None):
     args = parser.parse_args(cmd)
     kwargs = vars(args)
     kwargs.pop("config", None)
+    kwargs['beam_size'] = 50
     
     print('------------args--------------')
-    print(args)
+    print(kwargs)
     print('------------args--------------')
 
     inference(**kwargs)
