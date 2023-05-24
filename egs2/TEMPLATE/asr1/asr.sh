@@ -1560,7 +1560,7 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
                 --batch_size ${batch_size} \
                 --ngpu "${_ngpu}" \
 				--lm_file /DB/jieun/exp/finetuning/libri50per/230420_gpt2_char_libri50_train \
-				--lm_weight 0.03 \
+				--lm_weight 0.3 \
 				--penalty -0.1 \
                 --data_path_and_name_and_type "${_data}/${_scp},speech,${_type}" \
                 --key_file "${_logdir}"/keys.JOB.scp \
