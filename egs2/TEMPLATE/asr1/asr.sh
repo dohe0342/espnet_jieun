@@ -1560,8 +1560,7 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
                 --batch_size ${batch_size} \
                 --ngpu "${_ngpu}" \
 				--lm_file /DB/jieun/exp/finetuning/libri50per/230420_gpt2_char_libri50_train \
-				--lm_weight 0.3 \
-				--penalty -0.1 \
+				--lm_weight 0.1 \
                 --data_path_and_name_and_type "${_data}/${_scp},speech,${_type}" \
                 --key_file "${_logdir}"/keys.JOB.scp \
                 --asr_train_config "${asr_exp}"/config.yaml \
@@ -1569,7 +1568,6 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
                 --output_dir "${_logdir}"/output.JOB \
                 ${_opts} ${inference_args} || { cat $(grep -l -i error "${_logdir}"/asr_inference.*.log) ; exit 1; }
 
-		#--beam_size 50 \
         # 3. Calculate and report RTF based on decoding logs
         if [ ${asr_task} == "asr" ] && [ -z ${inference_bin_tag} ]; then
             log "Calculating RTF & latency... log: '${_logdir}/calculate_rtf.log'"
