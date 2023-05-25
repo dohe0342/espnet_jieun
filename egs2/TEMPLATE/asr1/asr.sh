@@ -1559,7 +1559,6 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
             ${python} -m espnet2.bin.${asr_task}_inference${inference_bin_tag} \
                 --batch_size ${batch_size} \
                 --ngpu "${_ngpu}" \
-				#--lm_file /DB/jieun/exp/finetuning/libri50per/230420_gpt2_char_libri50_train \
 				--lm_weight 0.0 \
 				--penalty -0.00 \
                 --data_path_and_name_and_type "${_data}/${_scp},speech,${_type}" \
@@ -1569,6 +1568,7 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
                 --output_dir "${_logdir}"/output.JOB \
                 ${_opts} ${inference_args} || { cat $(grep -l -i error "${_logdir}"/asr_inference.*.log) ; exit 1; }
 
+		#--lm_file /DB/jieun/exp/finetuning/libri50per/230420_gpt2_char_libri50_train \
         # 3. Calculate and report RTF based on decoding logs
         if [ ${asr_task} == "asr" ] && [ -z ${inference_bin_tag} ]; then
             log "Calculating RTF & latency... log: '${_logdir}/calculate_rtf.log'"
