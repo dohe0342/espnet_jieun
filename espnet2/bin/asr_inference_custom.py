@@ -172,7 +172,7 @@ class Speech2Text:
 
             scorers["lm"] = lm.lm
 
-        if 'gpt2' in lm_file:
+        if 'gpt2' in lm_file and lm_file is not None:
             lm = LMTask.build_gpt2_from_file(
                     lm_file, device
             )
