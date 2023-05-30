@@ -1683,7 +1683,7 @@ if [ ${stage} -le 13 ] && [ ${stop_stage} -ge 13 ] && ! [[ " ${skip_stages} " =~
                     --results-dir ${_scoredir}
             fi
 
-            . /workspace/espnet_jieun/tools/installers/sctk/bin/sclite \
+            source /workspace/espnet_jieun/tools/installers/sctk/bin/sclite \
                 ${score_opts} \
                 -r "${_scoredir}/ref.trn" trn \
                 -h "${_scoredir}/hyp.trn" trn \
