@@ -972,7 +972,7 @@ def main(cmd=None):
     kwargs = vars(args)
     kwargs.pop("config", None)
     
-    kwargs['beam_size'] = 100
+    #kwargs['beam_size'] = 100
     print('------------args--------------')
     print(kwargs)
     print('------------args--------------')
