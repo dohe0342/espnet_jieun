@@ -1559,8 +1559,6 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
             ${python} -m espnet2.bin.${asr_task}_inference${inference_bin_tag} \
                 --batch_size ${batch_size} \
                 --ngpu "${_ngpu}" \
-				--lm_weight 0.3 \
-				--penalty -0.1 \
 				--lm_file /DB/jieun/exp/finetuning/libri50per/230420_gpt2_char_libri50_train \
                 --data_path_and_name_and_type "${_data}/${_scp},speech,${_type}" \
                 --key_file "${_logdir}"/keys.JOB.scp \
