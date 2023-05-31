@@ -137,11 +137,9 @@ class FairSeqWav2Vec2Encoder(AbsEncoder):
             olens = torch.IntTensor([xs_pad.shape[1]]).repeat(bs).to(xs_pad.device)
 
         if self.output_layer is not None:
-            print('fuck1111111111111111')
             xs_pad = self.output_layer(xs_pad)
 
         if self.normalize_before:
-            print('fuck22222222222222222')
             xs_pad = self.after_norm(xs_pad)
 
         return xs_pad, olens, None
