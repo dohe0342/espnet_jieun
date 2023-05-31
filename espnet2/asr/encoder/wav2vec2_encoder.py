@@ -54,7 +54,7 @@ class FairSeqWav2Vec2Encoder(AbsEncoder):
                 raise e
 
         #self.w2v_model_path = download_w2v(w2v_url, w2v_dir_path)
-        self.w2v_model_path = "/workspace/models/wav2vec_model/wav2vec_small_100h.pt"
+        self.w2v_model_path = "/workspace/models/wav2vec_model/wav2vec_small_960h.pt"
 
         self._output_size = output_size
 
