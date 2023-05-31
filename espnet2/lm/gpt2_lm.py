@@ -110,8 +110,8 @@ class GPT2LM(AbsLM):
                              7:32,    #A
                              8:46,    #O
                              9:45,    #N
-                             10:40,    #I
-                             11:39,    #H
+                             10:40,   #I
+                             11:39,   #H
                              12:50,   #S
                              13:49,   #R
                              14:35,   #D
@@ -132,7 +132,6 @@ class GPT2LM(AbsLM):
                              29:41,   #J
                              30:48,   #Q
                              31:57,   #Z
-                             32:95,
                          }
         
         self.convert_matrix = torch.zeros(96, 31).to(device)
