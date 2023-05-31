@@ -611,3 +611,41 @@ class ASRTask(AbsTask):
 
         assert check_return_type(model)
         return model
+
+    @classmethod
+    def build_model_from_file(
+        cls, 
+        config_file: Union[Path, str] = None,
+        model_file: Union[Path, str] = None,
+        device: str = "cpu",
+    ) -> Tuple[AbsESPnetModel, argparse.Namespace]:
+        """Build model from the files.
+
+        This method is used for inference or fine-tuning.
+
+        Args:
+            config_file: The yaml file saved when training.
+            model_file: The model file saved when training.
+            device: Device type, "cpu", "cuda", or "cuda:N".
+
+        """
+        assert check_argument_types()
+        if config_file is None:
+            assert model_file is not None, (
+                "The argument 'model_file' must be provided "
+                "if the argument 'config_file' is not specified."
+            )    
+            config_file = Path(model_file).parent / "config.yaml"
+        else:
+            config_file = Path(config_file)
+
+        with config_file.open("r", encoding="utf-8") as f:
+            args = yaml.safe_load(f)
+        args = argparse.Namespace(**args)
+        model = cls.build_model(args)
+        if not isinstance(model, AbsESPnetModel):
+            raise RuntimeError(
+                f"model must inherit {AbsESPnetModel.__name__}, but got {type(model)}"
+            )    
+        model.to(device)
+
