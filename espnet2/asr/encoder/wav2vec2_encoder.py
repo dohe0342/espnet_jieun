@@ -141,7 +141,7 @@ class FairSeqWav2Vec2Encoder(AbsEncoder):
             xs_pad = self.output_layer(xs_pad)
 
         if self.normalize_before:
-            print('fuck22222222222222222'
+            print('fuck22222222222222222')
             xs_pad = self.after_norm(xs_pad)
 
         return xs_pad, olens, None
