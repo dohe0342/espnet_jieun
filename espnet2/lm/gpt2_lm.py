@@ -134,7 +134,7 @@ class GPT2LM(AbsLM):
                              31:57,   #Z
                          }
         
-        self.convert_matrix = torch.zeros(96, 31).to(device)
+        self.convert_matrix = torch.zeros(96, 32).to(device)
         self.convert_matrix[95][0] = 1
         self.convert_matrix[95][1] = 1
         self.convert_matrix[94][2] = 1
