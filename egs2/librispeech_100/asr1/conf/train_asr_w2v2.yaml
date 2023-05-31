@@ -19,12 +19,9 @@ best_model_criterion:
 keep_nbest_models: 10
 
 model_conf:
-    ctc_weight: 0.3
+    ctc_weight: 1.0
 
-freeze_param: [
-    "encoder.encoders.mask_emb", "encoder.encoders.feature_extractor",
-    "encoder.encoders.post_extract_proj", "encoder.encoders.quantizer",
-    "encoder.encoders.project_q"]
+freeze_param: []
 
 input_size: 768
 encoder: wav2vec2
