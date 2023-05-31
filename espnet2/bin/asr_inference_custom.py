@@ -127,7 +127,7 @@ class Speech2Text:
         #    asr_train_config, asr_model_file, device
         #)
         asr_model = task.build_model(
-            asr_train_config, device
+            asr_train_config
         )
         print(asr_model)
         exit()
