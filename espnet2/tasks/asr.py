@@ -613,7 +613,7 @@ class ASRTask(AbsTask):
         return model
 
     @classmethod
-    def build_model_from_file(
+    def build_w2v2(
         cls, 
         config_file: Union[Path, str] = None,
         model_file: Union[Path, str] = None,
