@@ -616,7 +616,6 @@ class ASRTask(AbsTask):
     def build_w2v2(
         cls, 
         config_file: Union[Path, str] = None,
-        model_file: Union[Path, str] = None,
         device: str = "cpu",
     ) -> Tuple[AbsESPnetModel, argparse.Namespace]:
         """Build model from the files.
