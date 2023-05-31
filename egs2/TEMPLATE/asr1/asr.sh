@@ -1555,7 +1555,7 @@ if [ ${stage} -le 12 ] && [ ${stop_stage} -ge 12 ] && ! [[ " ${skip_stages} " =~
 		echo -----------------------------------------------
 		echo ${asr_task}_inference${inference_bin_tag}
 		echo -----------------------------------------------
-		cp ${asr_exp}/../../conf/train_asr_w2v2.yaml ${asr_exp}/config.yaml
+		#cp ${asr_exp}/../../conf/train_asr_w2v2.yaml ${asr_exp}/config.yaml
         ${_cmd} --gpu "${_ngpu}" JOB=1:"${_nj}" "${_logdir}"/asr_inference.JOB.log \
             ${python} -m espnet2.bin.${asr_task}_inference${inference_bin_tag} \
                 --batch_size ${batch_size} \
