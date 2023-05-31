@@ -30,6 +30,7 @@ class GPT2LM(AbsLM):
         self.tokenizer = tokenizer
         self.log_softmax = torch.nn.LogSoftmax(dim=-1)
 
+        '''
         self.int_am2lm_dict = {
                              0:95,
                              1:95,
@@ -96,6 +97,75 @@ class GPT2LM(AbsLM):
         self.convert_matrix[48][28] = 1
         self.convert_matrix[57][29] = 1
         self.convert_matrix[95][30] = 1
+        '''
+
+        self.int_am2lm_dict = {
+                             0:95,
+                             1:95,
+                             2:94,    #|
+                             3:36,    #E
+                             4:51,    #T
+                             5:32,    #A
+                             6:46,    #O
+                             7:45,    #N
+                             8:40,    #I
+                             9:39,   #H
+                             10:50,   #S
+                             11:49,   #R
+                             12:35,   #D
+                             13:43,   #L
+                             14:52,   #U
+                             15:44,   #M
+                             16:54,   #W
+                             17:34,   #C
+                             18:37,   #F
+                             19:38,   #G
+                             20:56,   #Y
+                             21:47,   #P
+                             22:33,   #B
+                             23:53,   #V
+                             24:42,   #K
+                             25:6,    #'
+                             26:55,   #X
+                             27:41,   #J
+                             28:48,   #Q
+                             29:57,   #Z
+                             30:95,
+                         }
+        
+        self.convert_matrix = torch.zeros(96, 31).to(device)
+        self.convert_matrix[95][0] = 1
+        self.convert_matrix[95][1] = 1
+        self.convert_matrix[94][2] = 1
+        self.convert_matrix[36][3] = 1
+        self.convert_matrix[51][4] = 1
+        self.convert_matrix[32][5] = 1
+        self.convert_matrix[46][6] = 1
+        self.convert_matrix[45][7] = 1
+        self.convert_matrix[40][8] = 1
+        self.convert_matrix[39][9] = 1
+        self.convert_matrix[50][10] = 1
+        self.convert_matrix[49][11] = 1
+        self.convert_matrix[35][12] = 1
+        self.convert_matrix[43][13] = 1
+        self.convert_matrix[52][14] = 1
+        self.convert_matrix[44][15] = 1
+        self.convert_matrix[54][16] = 1
+        self.convert_matrix[34][17] = 1
+        self.convert_matrix[37][18] = 1
+        self.convert_matrix[38][19] = 1
+        self.convert_matrix[56][20] = 1
+        self.convert_matrix[47][21] = 1
+        self.convert_matrix[33][22] = 1
+        self.convert_matrix[53][23] = 1
+        self.convert_matrix[42][24] = 1
+        self.convert_matrix[6][25] = 1
+        self.convert_matrix[55][26] = 1
+        self.convert_matrix[41][27] = 1
+        self.convert_matrix[48][28] = 1
+        self.convert_matrix[57][29] = 1
+        self.convert_matrix[95][30] = 1
+
         print(self.convert_matrix)
 
     def _target_mask(self, ys_in_pad):
