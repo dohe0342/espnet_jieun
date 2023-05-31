@@ -588,10 +588,8 @@ class ASRTask(AbsTask):
 
         if 1:
             wav2vec_model = torch.load('/workspace/models/wav2vec_model/wav2vec_small_100h.pt')
-            print(ctc.ctc_lo.bias)
             ctc.ctc_lo.weight.data = wav2vec_model['model']['w2v_encoder.proj.weight']
             ctc.ctc_lo.bias.data = wav2vec_model['model']['w2v_encoder.proj.bias']
-            print(ctc.ctc_lo.bias)
 
         # 7. Build model
         try:
