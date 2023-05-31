@@ -153,8 +153,8 @@ class GPT2LM(AbsLM):
         self.convert_matrix[43][15] = 1
         self.convert_matrix[52][16] = 1
         self.convert_matrix[44][17] = 1
-        self.convert_matrix[54][18] = 1
-        self.convert_matrix[34][19] = 1
+        self.convert_matrix[34][18] = 1
+        self.convert_matrix[54][19] = 1
         self.convert_matrix[37][20] = 1
         self.convert_matrix[38][21] = 1
         self.convert_matrix[56][22] = 1
