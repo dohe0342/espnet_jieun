@@ -129,9 +129,7 @@ class Speech2Text:
         #asr_model, asr_train_args = task.build_model_from_file(
         #    asr_train_config, asr_model_file, device
         #)
-        print(asr_model)
-        exit()
-
+        
         if enh_s2t_task:
             asr_model.inherite_attributes(
                 inherite_s2t_attrs=[
