@@ -122,13 +122,13 @@ class Speech2Text:
 
         # 1. Build ASR model
         scorers = {}
-
+        
+        asr_model = task.build_w2v2(
+            asr_train_config, device
+        )
         #asr_model, asr_train_args = task.build_model_from_file(
         #    asr_train_config, asr_model_file, device
         #)
-        asr_model = task.build_model(
-            asr_train_config
-        )
         print(asr_model)
         exit()
 
