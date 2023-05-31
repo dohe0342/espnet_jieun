@@ -126,6 +126,8 @@ class Speech2Text:
         print('-'*20)
         print(asr_train_config)
         print('-'*20)
+        exit()
+
         asr_model, asr_train_args = task.build_model_from_file(
             asr_train_config, asr_model_file, device
         )
