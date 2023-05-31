@@ -33,7 +33,7 @@ class FairSeqWav2Vec2Encoder(AbsEncoder):
     def __init__(
         self,
         input_size: int,
-        w2v_url: str,
+        w2v_url: str = "",
         w2v_dir_path: str = "./",
         output_size: int = 256,
         normalize_before: bool = False,
