@@ -155,6 +155,8 @@ class Speech2Text:
 
         ctc = CTCPrefixScorer(ctc=asr_model.ctc, eos=asr_model.eos)
         token_list = asr_model.token_list
+        print(token_list)
+        exit()
         scorers.update(
             decoder=decoder,
             ctc=ctc,
