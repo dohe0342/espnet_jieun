@@ -586,6 +586,10 @@ class ASRTask(AbsTask):
             odim=vocab_size, encoder_output_size=encoder_output_size, **args.ctc_conf
         )
 
+        if 1:
+            wav2vec_model = torch.load('/workspace/models/wav2vec_model/wav2vec_small_100h.pt')
+            ctc.ctc_lo.weight.data = 
+
         # 7. Build model
         try:
             model_class = model_choices.get_class(args.model)
