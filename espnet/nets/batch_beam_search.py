@@ -101,7 +101,7 @@ class BatchBeamSearch(BeamSearch):
         #top_ids = weighted_scores.view(-1).topk(self.beam_size)[1]
         try: top_ids = weighted_scores.view(-1).topk(self.beam_size)[1]
         except: 
-            top_ids = weighted_scores.view(-1).topk(30)[1]
+            top_ids = weighted_scores.view(-1).topk(31)[1]
         # Because of the flatten above, `top_ids` is organized as:
         # [hyp1 * V + token1, hyp2 * V + token2, ..., hypK * V + tokenK],
         # where V is `self.n_vocab` and K is `self.beam_size`
