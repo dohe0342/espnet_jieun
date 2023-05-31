@@ -648,4 +648,4 @@ class ASRTask(AbsTask):
                 f"model must inherit {AbsESPnetModel.__name__}, but got {type(model)}"
             )    
         model.to(device)
-
+        return model
