@@ -80,8 +80,6 @@ class CTC(torch.nn.Module):
         """
         # hs_pad: (B, L, NProj) -> ys_hat: (B, L, Nvocab)
         ys_hat = self.ctc_lo(F.dropout(hs_pad, p=self.dropout_rate))
-        print('fuck!!!!!!!!!1')
-        ys_hat /= 5.
 
         if self.ctc_type == "gtnctc":
             # gtn expects list form for ys
