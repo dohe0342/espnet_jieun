@@ -116,7 +116,7 @@ class CTC(torch.nn.Module):
         Returns:
             torch.Tensor: log softmax applied 3d tensor (B, Tmax, odim)
         """
-        print('fuck!!!!!!!!!!!!!!')
+        hs_pad /= 2.
         return F.log_softmax(self.ctc_lo(hs_pad), dim=2)
 
     def argmax(self, hs_pad):
