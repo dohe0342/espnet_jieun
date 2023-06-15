@@ -334,7 +334,7 @@ class CommonPreprocessor(AbsPreprocessor):
             text_ints = self.token_id_converter.tokens2ids(tokens)
             if len(text_ints) > 150:
                 logging.warning(
-                    "The length of the text output exceeds 100, "
+                    "The length of the text output exceeds 150, "
                     "which may cause OOM on the GPU."
                     "Please ensure that the data processing is correct and verify it."
                 )
