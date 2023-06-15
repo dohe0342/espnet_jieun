@@ -48,14 +48,14 @@ batch_type: numel
 #batch_bins: 1200000            # good for single GPU w/ 40G mem
 batch_bins: 120000000            # good for single GPU w/ 40G mem
 accum_grad: 1
-max_epoch: 3
+max_epoch: 10
 patience: none
 init: none
 best_model_criterion:
 -   - valid
     - acc
     - max
-keep_nbest_models: 3
+keep_nbest_models: 5
 
 use_amp: true
 cudnn_deterministic: false
