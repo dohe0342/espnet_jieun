@@ -26,6 +26,7 @@ decoder_conf:
     whisper_model: medium
     dropout_rate: 0.0
 
+token_type: whisper
 model_conf:
     ctc_weight: 0.0
     lsm_weight: 0.1
