@@ -1684,7 +1684,8 @@ if [ ${stage} -le 13 ] && [ ${stop_stage} -ge 13 ] && ! [[ " ${skip_stages} " =~
                     --results-dir ${_scoredir}
             fi
 
-            ./../../../tools/installers/sctk/bin/sclite \
+            #./../../../tools/installers/sctk/bin/sclite \
+			sclite
                 ${score_opts} \
                 -r "${_scoredir}/ref.trn" trn \
                 -h "${_scoredir}/hyp.trn" trn \
