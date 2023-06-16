@@ -18,7 +18,8 @@ inference_config=conf/decode_asr.yaml
     --ngpu 4 \
     --nj 4 \
     --gpu_inference true \
-    --inference_nj 2 \
+	--inference_asr_model valid.acc.ave.pth
+    --inference_nj 4 \
     --nbpe 5000 \
     --max_wav_duration 30 \
     --speed_perturb_factors "0.9 1.0 1.1" \
