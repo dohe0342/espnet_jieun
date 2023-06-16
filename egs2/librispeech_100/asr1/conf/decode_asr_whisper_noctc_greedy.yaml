@@ -4,4 +4,3 @@ lm_weight: 0.0
 maxlenratio: 0.3
 minlenratio: 0.0
 penalty: 0.0
-inference_asr_model: valid.acc.best.pth
