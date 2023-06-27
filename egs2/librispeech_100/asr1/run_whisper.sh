@@ -6,8 +6,8 @@ asr_config=conf/tuning/train_asr_whisper_full.yaml
 inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
 
 ./asr.sh \
-    --skip_data_prep false \
-    --skip_train true \
+    --skip_data_prep true \
+    --skip_train false \
     --skip_eval false \
     --lang en \
     --ngpu 4 \
