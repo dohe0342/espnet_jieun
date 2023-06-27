@@ -35,7 +35,7 @@ class OpenAIWhisperTokenizer(AbsTokenizer):
         return f'{self.__class__.__name__}(model="{self.model}")'
 
     def text2tokens(self, line: str) -> List[str]:
-        return self.tokenizer.tokenize(line, add_special_tokens=False)
+        return self.tokenizer.tokenizer.tokenize(line, add_special_tokens=False)
 
     def tokens2text(self, tokens: Iterable[str]) -> str:
         return self.tokenizer.tokenizer.convert_tokens_to_string(tokens)
