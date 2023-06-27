@@ -10,7 +10,7 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --skip_train true \
     --skip_eval false \
     --lang en \
-    --ngpu 1 \
+    --ngpu 4 \
     --nj 4 \
     --stage 1 \
     --stop_stage 13 \
