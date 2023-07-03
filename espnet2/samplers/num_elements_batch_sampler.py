@@ -126,6 +126,7 @@ class NumElementsBatchSampler(AbsSampler):
                     )
 
                 self.batch_list.append(tuple(minibatch_keys))
+                print(minibatch_keys)
                 minibatch_keys = []
                 try:
                     bs = next(iter_bs)
