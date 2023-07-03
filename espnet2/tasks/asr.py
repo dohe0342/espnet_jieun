@@ -611,7 +611,7 @@ class ASRTask(AbsTask):
             **args.model_conf,
         )
 
-        if 1:
+        if args.encoder_conf['prompt']:
             for n, p in model.named_parameters():
                 if 'guidance' in n:
                     p.requires_grad = True
