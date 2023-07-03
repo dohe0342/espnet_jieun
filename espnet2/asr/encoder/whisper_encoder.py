@@ -24,6 +24,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
         use_specaug: bool = False,
         specaug_conf: Union[dict, None] = None,
         do_pad_trim: bool = False,
+        prompt: bool = True
     ):
         try:
             import whisper
