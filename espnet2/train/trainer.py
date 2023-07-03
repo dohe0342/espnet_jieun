@@ -510,8 +510,6 @@ class Trainer:
         for iiter, (utt_id, batch) in enumerate(
             reporter.measure_iter_time(iterator, "iter_time"), 1
         ):
-            print(batch)
-            exit()
             assert isinstance(batch, dict), type(batch)
 
             if distributed:
