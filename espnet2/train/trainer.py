@@ -508,17 +508,10 @@ class Trainer:
 
         start_time = time.perf_counter()
         
-        print('0'*30)
-        print(iterator)
-        print('0'*30)
-
         for iiter, (utt_id, batch) in enumerate(
             reporter.measure_iter_time(iterator, "iter_time"), 1
         ):
             assert isinstance(batch, dict), type(batch)
-            print('-'*30)
-            print(batch)
-            print('-'*30)
 
             if distributed:
                 torch.distributed.all_reduce(iterator_stop, ReduceOp.SUM)
