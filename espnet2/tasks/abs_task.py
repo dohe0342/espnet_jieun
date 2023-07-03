@@ -888,6 +888,8 @@ class AbsTask(ABC):
         params = [p for p in model.parameters() if p.requires_grad]
         logging.info('-'*20)
         logging.info(len(params))
+        for p in params:
+            print(p)
         logging.info('-'*20)
 
         if cls.num_optimizers != 1:
