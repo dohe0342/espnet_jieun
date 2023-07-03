@@ -902,7 +902,7 @@ class AbsTask(ABC):
             if fairscale is None:
                 raise RuntimeError("Requiring fairscale. Do 'pip install fairscale'")
             optim = fairscale.optim.oss.OSS(
-                params=model.parameters(), optim=optim_class, **args.optim_conf
+                params=params, optim=optim_class, **args.optim_conf
             )
         else:
             if args.exclude_weight_decay:
