@@ -611,6 +611,12 @@ class ASRTask(AbsTask):
             **args.model_conf,
         )
 
+        if 1:
+            print(model)
+            for n, p in model.named_parameters():
+                print(n)
+            exit()
+
         # FIXME(kamo): Should be done in model?
         # 8. Initialize
         if args.init is not None:
