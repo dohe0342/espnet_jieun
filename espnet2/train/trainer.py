@@ -511,9 +511,6 @@ class Trainer:
             reporter.measure_iter_time(iterator, "iter_time"), 1
         ):
             assert isinstance(batch, dict), type(batch)
-            print('-'*30)
-            print(batch)
-            print('-'*30)
 
             if distributed:
                 torch.distributed.all_reduce(iterator_stop, ReduceOp.SUM)
