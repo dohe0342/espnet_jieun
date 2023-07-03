@@ -614,8 +614,10 @@ class ASRTask(AbsTask):
         if 1:
             print(model)
             for n, p in model.named_parameters():
-                print(n)
-            exit()
+                if 'guidance' in n:
+                    p.requires_grad = True
+                else:
+                    p.requries_grad = False
 
         # FIXME(kamo): Should be done in model?
         # 8. Initialize
