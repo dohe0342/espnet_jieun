@@ -50,6 +50,11 @@ class OpenAIWhisperEncoder(AbsEncoder):
 
         # note that originally Whisper doesn't use dropouts
         self.dropout = torch.nn.Dropout(dropout_rate)
+        
+        self.prompt = prompt
+        self.prompt_len = prompt_len
+        if self.prompt:
+            self.guidance = 
 
         assert whisper_model in whisper.available_models()
         _model = whisper.load_model(whisper_model, download_root=download_dir)
