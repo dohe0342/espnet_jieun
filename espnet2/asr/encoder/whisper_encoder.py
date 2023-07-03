@@ -53,8 +53,9 @@ class OpenAIWhisperEncoder(AbsEncoder):
         
         self.prompt = prompt
         self.prompt_len = prompt_len
+        self.emb_size = 1024
         if self.prompt:
-            self.guidance = torch.nn.Parameter(torch.rand(self.prompt_len, 1024))
+            self.guidance = torch.nn.Parameter(torch.rand(self.prompt_len, self.emb_size))
 
         assert whisper_model in whisper.available_models()
         _model = whisper.load_model(whisper_model, download_root=download_dir)
@@ -147,6 +148,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
             x = x[:, :max_pos, :] + self.encoders.positional_embedding
 
         x = self.dropout(x)
+        guidance = self.guidance.exand(n_samples, 
 
         for layer, block in enumerate(self.encoders.blocks):
             x = block(x)
