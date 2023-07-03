@@ -148,8 +148,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
             x = x[:, :max_pos, :] + self.encoders.positional_embedding
 
         x = self.dropout(x)
-        guidance = self.guidance.exand(n_samples, 
-
+        guidance = self.guidance.exand(n_samples, self.prompt_len, self.emb_size)
         for layer, block in enumerate(self.encoders.blocks):
             x = block(x)
             if layer < len(self.encoders.blocks) - 1:
