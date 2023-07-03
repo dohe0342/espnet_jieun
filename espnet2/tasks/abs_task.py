@@ -913,7 +913,7 @@ class AbsTask(ABC):
                     args.exclude_weight_decay_conf,
                 )
             else:
-                optim = optim_class(model.parameters(), **args.optim_conf)
+                optim = optim_class(params, **args.optim_conf)
 
         optimizers = [optim]
         return optimizers
