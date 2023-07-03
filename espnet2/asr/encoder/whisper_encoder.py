@@ -146,6 +146,9 @@ class OpenAIWhisperEncoder(AbsEncoder):
             x = x[:, :max_pos, :] + self.encoders.positional_embedding
 
         x = self.dropout(x)
+        print('1'*20)
+        print(x.size())
+        print('1'*20)
 
         for layer, block in enumerate(self.encoders.blocks):
             x = block(x)
