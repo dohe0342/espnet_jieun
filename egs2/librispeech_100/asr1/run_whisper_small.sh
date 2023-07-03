@@ -12,7 +12,7 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --lang en \
     --ngpu 4 \
     --nj 4 \
-    --stage 11 \
+    --stage 13 \
     --stop_stage 13 \
     --gpu_inference true \
     --inference_nj 1 \
