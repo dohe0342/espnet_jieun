@@ -151,7 +151,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
         if self.prompt:
             guidance = self.guidance.exand(n_samples, self.prompt_len, self.emb_size)
             x = torch.cat([guidance, x], dim=1)
-
+            print('1111', x.size())
         
         for layer, block in enumerate(self.encoders.blocks):
             x = block(x)
