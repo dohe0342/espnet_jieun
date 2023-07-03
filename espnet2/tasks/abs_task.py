@@ -885,6 +885,7 @@ class AbsTask(ABC):
         args: argparse.Namespace,
         model: torch.nn.Module,
     ) -> List[torch.optim.Optimizer]:
+        params = [p if p.requries_grad for p in model.parameters()]
         if cls.num_optimizers != 1:
             raise RuntimeError(
                 "build_optimizers() must be overridden if num_optimizers != 1"
