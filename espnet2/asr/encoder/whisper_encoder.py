@@ -138,6 +138,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
         x = x.permute(0, 2, 1)
 
         n_frames = x.size(1)
+        n_samples = x.size(0)
         max_pos = self.encoders.positional_embedding.size(0)
         if n_frames <= max_pos:
             x = (x + self.encoders.positional_embedding[: x.size(1), :]).to(x.dtype)
