@@ -612,10 +612,10 @@ class ASRTask(AbsTask):
         )
 
         if 1:
-            print(model)
             for n, p in model.named_parameters():
                 if 'guidance' in n:
                     p.requires_grad = True
+                    logging.info(f"param {n} update True.")
                 else:
                     p.requries_grad = False
 
