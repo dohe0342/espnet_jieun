@@ -149,7 +149,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
 
         x = self.dropout(x)
         if self.prompt:
-            guidance = self.guidance.exand(n_samples, self.prompt_len, self.emb_size)
+            guidance = self.guidance.expand(n_samples, self.prompt_len, self.emb_size)
             x = torch.cat([guidance, x], dim=1)
             print('1111', x.size())
         
