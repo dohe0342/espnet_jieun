@@ -54,7 +54,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
         self.prompt = prompt
         self.prompt_len = prompt_len
         if self.prompt:
-            self.guidance = 
+            self.guidance = torch.nn.Parameter(torch.rand(self.prompt_len, 1024)
 
         assert whisper_model in whisper.available_models()
         _model = whisper.load_model(whisper_model, download_root=download_dir)
