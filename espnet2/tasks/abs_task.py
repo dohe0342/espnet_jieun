@@ -885,7 +885,7 @@ class AbsTask(ABC):
         args: argparse.Namespace,
         model: torch.nn.Module,
     ) -> List[torch.optim.Optimizer]:
-        params = [p if p.requries_grad for p in model.parameters()]
+        params = [p for p in model.parameters() if p.requires_grad]
 
         if cls.num_optimizers != 1:
             raise RuntimeError(
