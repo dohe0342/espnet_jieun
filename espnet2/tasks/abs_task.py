@@ -889,8 +889,7 @@ class AbsTask(ABC):
         logging.info('-'*20)
         logging.info(len(params))
         for p in params:
-            if model.device.index == 0:
-                print(p.size())
+            print(p.size())
         logging.info('-'*20)
 
         if cls.num_optimizers != 1:
