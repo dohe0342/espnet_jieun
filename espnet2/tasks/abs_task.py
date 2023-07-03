@@ -885,6 +885,11 @@ class AbsTask(ABC):
         args: argparse.Namespace,
         model: torch.nn.Module,
     ) -> List[torch.optim.Optimizer]:
+        for n, p in model.named_parameters():
+            if 'guidance' in n:
+                p.requries_grad = True
+            else:
+                p.requires_grad = False
         params = [p for p in model.parameters() if p.requires_grad]
         logging.info('-'*20)
         logging.info(len(params))
