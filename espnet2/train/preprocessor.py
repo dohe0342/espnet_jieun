@@ -329,9 +329,9 @@ class CommonPreprocessor(AbsPreprocessor):
             text = data[self.text_name]
             if isinstance(text, np.ndarray):
                 return data
-            print(text)
+            print('11111', text)
             text = self.text_cleaner(text)
-            print(text)
+            print('22222', text)
             tokens = self.tokenizer.text2tokens(text)
             text_ints = self.token_id_converter.tokens2ids(tokens)
             if len(text_ints) > 150:
