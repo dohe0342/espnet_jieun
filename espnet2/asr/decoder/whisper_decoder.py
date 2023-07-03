@@ -47,7 +47,7 @@ class OpenAIWhisperDecoder(AbsDecoder, BatchScorerInterface):
         # orig vocab size (multilingual): 51865
         # orig vocab size (english): 51864
         if vocab_size != self.decoders.token_embedding.num_embeddings:
-            print('fuck!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+            logging.info('fuck!!!!!!!!!!!!!!!!!!!!!!1')
             orig_emb_std, orig_emb_mean = torch.std_mean(
                 self.decoders.token_embedding.weight
             )
