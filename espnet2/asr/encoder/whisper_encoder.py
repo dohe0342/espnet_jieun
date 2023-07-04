@@ -53,11 +53,11 @@ class OpenAIWhisperEncoder(AbsEncoder):
         
         self.prompt = prompt
         self.prompt_len = prompt_len
-        if whisper_moel == 'tiny': self.emb_size = 384
-        if whisper_moel == 'base': self.emb_size = 512
-        if whisper_moel == 'small': self.emb_size = 768
-        if whisper_moel == 'medium': self.emb_size = 1024
-        if whisper_moel == 'large': self.emb_size = 1280
+        if whisper_model == 'tiny': self.emb_size = 384
+        if whisper_model == 'base': self.emb_size = 512
+        if whisper_model == 'small': self.emb_size = 768
+        if whisper_model == 'medium': self.emb_size = 1024
+        if whisper_model == 'large': self.emb_size = 1280
         
         if self.prompt:
             self.guidance = torch.nn.Parameter(torch.rand(self.prompt_len, self.emb_size))
