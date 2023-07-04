@@ -23,7 +23,6 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --speed_perturb_factors "0.9 1.0 1.1" \
     --audio_format "flac.ark" \
     --feats_type raw \
-	--cleaner whisper_en \
     --use_lm false \
     --asr_tag "${asr_tag}" \
     --asr_config "${asr_config}" \
