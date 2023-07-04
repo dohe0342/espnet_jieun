@@ -1,6 +1,7 @@
 train_set="train_clean_100"
 valid_set="dev"
-test_sets="test_clean test_other dev_clean dev_other"
+#test_sets="test_clean test_other dev_clean dev_other"
+test_sets="test_clean"
 asr_tag=whisper_small_finetune_lr1e-5_adamw_wd1e-2_3epochs_guidance_newtarget
 asr_config=conf/tuning/train_asr_whisper_small_guidance.yaml
 inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
