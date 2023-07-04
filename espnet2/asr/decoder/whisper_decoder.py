@@ -86,7 +86,7 @@ class OpenAIWhisperDecoder(AbsDecoder, BatchScorerInterface):
                 if use_output_layer is True,
             olens: (batch, )
         """
-        logging.info(ys_in_pad)
+        print(ys_in_pad)
         exit()
         tgt, memory = ys_in_pad, hs_pad
         tgt = (
