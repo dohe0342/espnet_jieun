@@ -47,7 +47,6 @@ class OpenAIWhisperDecoder(AbsDecoder, BatchScorerInterface):
         # orig vocab size (multilingual): 51865
         # orig vocab size (english): 51864
         if vocab_size != self.decoders.token_embedding.num_embeddings:
-            logging.info('fuck!!!!!!!!!!!!!!!!!!!!!! not this!!!!!!!!!1')
             orig_emb_std, orig_emb_mean = torch.std_mean(
                 self.decoders.token_embedding.weight
             )
@@ -87,6 +86,8 @@ class OpenAIWhisperDecoder(AbsDecoder, BatchScorerInterface):
                 if use_output_layer is True,
             olens: (batch, )
         """
+        logging.info(ys_in_pad)
+        exit()
         tgt, memory = ys_in_pad, hs_pad
         tgt = (
             self.decoders.token_embedding(tgt)
