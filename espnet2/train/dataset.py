@@ -509,9 +509,6 @@ class ESPnetDataset(AbsDataset):
         data = {}
         # 1. Load data from each loaders
         for name, loader in self.loader_dict.items():
-            if uid not in loader.keys():
-                continue
-
             try:
                 value = loader[uid]
                 if isinstance(value, (list)):
