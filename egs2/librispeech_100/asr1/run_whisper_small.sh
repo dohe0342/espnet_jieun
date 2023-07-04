@@ -12,7 +12,7 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --lang en \
     --ngpu 1 \
     --nj 4 \
-    --stage 11 \
+    --stage 12 \
     --stop_stage 13 \
     --gpu_inference true \
     --inference_nj 1 \
@@ -22,6 +22,7 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --speed_perturb_factors "0.9 1.0 1.1" \
     --audio_format "flac.ark" \
     --feats_type raw \
+	--cleaner whisper_en \
     --use_lm false \
     --asr_tag "${asr_tag}" \
     --asr_config "${asr_config}" \
@@ -30,4 +31,3 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --train_set "${train_set}" \
     --valid_set "${valid_set}" \
     --test_sets "${test_sets}" "$@"
-#--cleaner whisper_en \
