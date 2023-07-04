@@ -890,10 +890,10 @@ class AbsTask(ABC):
         #        p.requries_grad = True
         #    else:
         #        p.requires_grad = False
-        #params = [p for p in model.parameters() if p.requires_grad]
-        #logging.info('-'*20)
-        #logging.info(len(params))
-        #logging.info('-'*20)
+        params = [p for p in model.parameters() if p.requires_grad]
+        logging.info('-'*20)
+        logging.info(len(params))
+        logging.info('-'*20)
 
         if cls.num_optimizers != 1:
             raise RuntimeError(
