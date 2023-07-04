@@ -86,8 +86,6 @@ class OpenAIWhisperDecoder(AbsDecoder, BatchScorerInterface):
                 if use_output_layer is True,
             olens: (batch, )
         """
-        print(ys_in_pad[0][:6], ys_in_pad[0][-1])
-        exit()
         tgt, memory = ys_in_pad, hs_pad
         tgt = (
             self.decoders.token_embedding(tgt)
