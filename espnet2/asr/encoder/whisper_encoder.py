@@ -53,7 +53,7 @@ class OpenAIWhisperEncoder(AbsEncoder):
         
         self.prompt = prompt
         self.prompt_len = prompt_len
-        self.emb_size = 1024
+        self.emb_size = 768
         if self.prompt:
             self.guidance = torch.nn.Parameter(torch.rand(self.prompt_len, self.emb_size))
 
