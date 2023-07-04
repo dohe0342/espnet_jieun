@@ -23,7 +23,6 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --audio_format "flac.ark" \
     --feats_type raw \
     --use_lm false \
-    --cleaner whisper_en \
     --asr_tag "${asr_tag}" \
     --asr_config "${asr_config}" \
     --inference_config "${inference_config}" \
@@ -31,3 +30,4 @@ inference_config=conf/decode_asr_whisper_noctc_greedy.yaml
     --train_set "${train_set}" \
     --valid_set "${valid_set}" \
     --test_sets "${test_sets}" "$@"
+#--cleaner whisper_en \
