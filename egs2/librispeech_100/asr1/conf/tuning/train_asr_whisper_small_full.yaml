@@ -62,7 +62,7 @@ cudnn_benchmark: false
 optim: adamw
 grad_clip: 5.0
 optim_conf:
-    lr: 2.5e-05
+    lr: 1.5e-05
     weight_decay: 0.01
     betas:
     - 0.9
