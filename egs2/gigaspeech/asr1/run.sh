@@ -7,7 +7,7 @@ set -o pipefail
 
 train_set="train"
 valid_set="dev"
-test_sets="dev test"
+test_sets="test-clean"
 
 asr_config=conf/train_asr_e_branchformer.yaml
 lm_config=conf/train_lm.yaml
